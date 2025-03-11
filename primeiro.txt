@@ -1,1 +1,89 @@
 Primeira alteração.
+
+1. Regra do Git:
+O Git é uma ferramenta de controle de versão e deve ser usado em discos locais que não sejam removíveis, como discos rígidos (HDD/SSD), pois a integridade do repositório pode ser comprometida quando o repositório é usado em dispositivos removíveis (como pendrives, discos externos, etc.). Embora você possa transportar o repositório em um dispositivo removível, o uso contínuo do Git em um disco removível pode resultar em problemas, principalmente ao desconectar e reconectar dispositivos.
+2. Criar Repositório Git e o Comando git init:
+Para começar a trabalhar com Git em um projeto, você precisa inicializar um repositório Git no diretório de trabalho. Isso é feito com o comando:
+git init
+Este comando cria um novo repositório Git no diretório em que você está. Esse repositório Git será gerenciado pelo Git para versionamento de arquivos. Após executar o comando git init, o Git cria uma pasta oculta chamada .git no seu diretório de trabalho. Essa pasta é onde o Git armazena todos os dados relacionados ao repositório, como históricos de commits, branches, configurações, etc. Não deve mexer diretamente nessa pasta, pois ela contém toda a estrutura interna de gerenciamento do Git.
+3. Comando git init e Criação do Repositório:
+Quando você executa o comando git init, ele inicializa o repositório, e você pode começar a versionar os arquivos do diretório. A pasta .git é a responsável por armazenar toda a estrutura do repositório Git (como você mencionou, ela ficará "por lá", ou seja, não deve ser mexida diretamente).
+Após rodar o comando git init, você verá uma estrutura de diretório com a pasta .git (oculta por padrão), que contém todo o histórico e informações de versionamento do seu projeto.
+4. Pasta .git:
+A pasta .git é uma pasta oculta dentro do repositório que armazena todos os dados necessários para o controle de versão. Isso inclui:
+Objetos: Contém todos os arquivos do histórico, como commits e blobs (conteúdo dos arquivos).
+Refs: Armazena as referências para os branches (ramificações), como refs/heads/main.
+Configurações: Contém as configurações do repositório (em .git/config).
+5. Não Mexer na Pasta .git:
+A pasta .git deve ser ignorada e não modificada diretamente. Ela armazena todas as informações de controle de versão do seu repositório. Mexer diretamente na pasta pode corromper o repositório e comprometer a integridade do histórico de versões.
+6. Comando git status e Branch main:
+Depois de inicializar o repositório com git init, você pode começar a adicionar arquivos e fazer commits. O Git também começa a trabalhar com uma branch (ramificação) padrão chamada main (em versões anteriores, o nome padrão era master).
+Após rodar git init, você pode ver a branch atual (geralmente main) usando o comando:
+git status
+Esse comando mostra a situação atual do repositório, incluindo o estado da branch em que você está. Após o git init, a branch principal será main, e o terminal irá mostrar algo como:
+On branch main
+nothing to commit, working tree clean
+Isso significa que você está na branch main e não há mudanças a serem feitas ou commitadas.
+7. Criar uma Branch feature (ou Brech 2):
+Você pode criar uma nova branch para trabalhar em uma funcionalidade separada ou uma modificação do código sem afetar o trabalho na branch principal (main). Para criar uma nova branch e alternar para ela, você pode usar o comando:
+git checkout -b nome-da-branch
+Por exemplo, para criar uma branch chamada feature, você pode fazer:
+git checkout -b feature
+Essa branch será uma cópia da main, mas você pode começar a fazer alterações nela sem impactar a branch principal. Nesse caso, a branch feature começa "zerada", ou seja, ela começa com o mesmo conteúdo que a main, mas pode ser modificada independentemente.
+Quando você terminar de trabalhar na sua branch feature, você pode mesclar ela de volta para a branch principal (main) com o comando:
+git merge feature
+Resumo do Fluxo Básico:
+Criar um repositório com git init.
+Adicionar arquivos ao repositório.
+Fazer commits com git add . para adicionar arquivos e git commit -m "Mensagem do commit".
+Criar novas branches para desenvolvimento, com git checkout -b nome-da-branch.
+Alternar entre branches com git checkout nome-da-branch.
+Mesclar branches de volta para a principal (geralmente main) com git merge nome-da-branch.
+Evitar mexer na pasta .git, pois ela contém todas as configurações e o histórico do repositório.
+
+
+Comandos no terminal e significados (Báicos):
+
+dir: O comando "dir" é usado para listar o conteúdo de um diretório, exibindo uma lista dos arquivos e pastas contidos no diretório atual. Adicionalmente, você pode adicionar parâmetros para filtrar os resultados, como exibir apenas arquivos de um determinado tipo ou listar em ordem alfabética.
+mkdir: Com o comando "mkdir" (Make Directory), você pode criar um novo diretório. Por exemplo, "mkdir C:\NovaPasta" criará uma nova pasta chamada "NovaPasta" no disco C.
+del: O comando "del" é utilizado para excluir arquivos. Você pode especificar o nome do arquivo a ser excluído, como "del arquivo.txt". É importante ter cuidado ao usar esse comando, pois os arquivos excluídos não podem ser recuperados facilmente.
+copy: O comando "copy" é usado para copiar arquivos de um local para outro. Você precisa fornecer o caminho do arquivo de origem e o destino desejado. Por exemplo, "copy C:\Arquivo.txt D:\Destino" copiará o arquivo "Arquivo.txt" do disco C para a pasta "Destino" no disco D.
+ren: Com o comando "ren" (Rename), você pode renomear arquivos ou pastas - basta especificar o nome atual do arquivo/pasta e o novo nome desejado. Por exemplo, "ren Arquivo.txt NovoArquivo.txt" renomeará o arquivo "Arquivo.txt" para "NovoArquivo.txt".
+ipconfig: O comando "ipconfig" exibe informações sobre a configuração de rede do seu computador. Ele mostra o endereço IP, máscara de sub-rede, gateway padrão e outras informações relacionadas à conexão de rede.
+ping: O comando "ping" é usado para verificar a conectividade entre o seu computador e um endereço IP ou nome de domínio específico. Ele envia pacotes de dados para o destino e aguarda uma resposta, o que pode ser útil para diagnosticar problemas de rede ou verificar se um servidor está respondendo.
+tasklist: O comando "tasklist" lista os processos em execução no seu computador. Ele exibe informações como o nome do processo, identificador de processo (PID), uso de CPU e memória. Esse comando pode ajudar a identificar quais aplicativos estão em execução e consumindo recursos.
+taskkill: Com o comando "taskkill", você pode encerrar um processo específico. Basta fornecer o PID ou o nome do processo que você deseja encerrar ("taskkill /PID 1234", por exemplo, encerrará o processo com o PID 1234).
+systeminfo: O comando "systeminfo" exibe informações detalhadas sobre o sistema operacional e o hardware do seu computador. Ele fornece detalhes como o nome do sistema operacional, versão, fabricante do sistema, informações de hardware (como processador, memória RAM, etc.) e até mesmo informações sobre a configuração da rede.
+netstat: O comando "netstat" mostra estatísticas de rede e conexões ativas. Ele exibe uma lista de todas as conexões de rede ativas, portas em uso, endereços IP e status da conexão. Isso pode ser útil para monitorar conexões de rede, identificar processos que estão utilizando portas específicas e diagnosticar problemas de conectividade.
+sfc /scannow: O comando "sfc /scannow" é usado para verificar e reparar arquivos do sistema corrompidos no Windows. Ele verifica a integridade dos arquivos protegidos do sistema e tenta substituir os arquivos corrompidos por versões saudáveis. Esse comando é útil quando ocorrem erros ou falhas do sistema relacionados a arquivos corrompidos.
+shutdown: O comando "shutdown" permite desligar ou reiniciar o computador à força. Você pode especificar parâmetros adicionais, como um temporizador para agendar o desligamento/reinicialização. Por exemplo, "shutdown /s /t 0" desligará o computador imediatamente.
+chkdsk: O comando "chkdsk" é usado para verificar e corrigir erros no disco rígido ou em uma unidade de armazenamento, verificando a integridade do sistema de arquivos e tentando reparar setores defeituosos ou problemas de alocação de arquivos.
+format: O comando "format" permite formatar um disco ou unidade de armazenamento. Ao executar esse comando, todos os dados no disco serão apagados permanentemente. Portanto, é importante ter cuidado ao utilizá-lo e garantir que você esteja formatando a unidade correta.
+xcopy: O comando "xcopy" é usado para copiar arquivos e diretórios, mantendo as permissões e atributos originais. Ele possui recursos avançados, como a capacidade de copiar subdiretórios e arquivos ocultos. O "xcopy" é uma opção mais poderosa em comparação ao comando "copy" mencionado anteriormente.
+find: O comando "find" é utilizado para pesquisar uma determinada sequência de caracteres em arquivos. Você pode especificar o padrão a ser encontrado e o arquivo onde a pesquisa será realizada. O "find" retornará todas as linhas que correspondem ao padrão especificado.
+attrib: O comando "attrib" é usado para exibir ou modificar atributos de arquivos e diretórios. Os atributos podem incluir "somente leitura", "oculto", "arquivo de sistema" e outros. Com o "attrib", você pode visualizar os atributos atuais ou alterá-los de acordo com suas necessidades.
+assoc: O comando "assoc" é utilizado para associar uma extensão de arquivo a um programa específico. Por exemplo, você pode usar o "assoc .txt=notepad.exe" para associar arquivos com extensão .txt ao programa Bloco de Notas. Isso significa que ao clicar duas vezes em um arquivo .txt, ele será aberto automaticamente no Bloco de Notas.
+taskmgr: O comando "taskmgr" abre o Gerenciador de Tarefas do Windows. O Gerenciador de Tarefas é uma ferramenta poderosa que permite visualizar e controlar os processos em execução, monitorar o desempenho do sistema, gerenciar serviços e muito mais. É uma ótima maneira de solucionar problemas, encerrar aplicativos travados ou monitorar o uso de recursos do sistema.
+regedit: O comando "regedit" é usado para acessar o Editor de Registro do Windows - uma ferramenta avançada que permite visualizar e editar as configurações do registro do sistema operacional. É importante ter cuidado ao fazer alterações no registro, pois modificações incorretas podem causar problemas no sistema.
+ver: O comando "ver" exibe a versão do Windows instalado no computador. É útil para verificar rapidamente qual versão do sistema operacional você está usando e se há alguma atualização a ser feita.
+cls: Este comando é usado para limpar a tela do prompt de comando do Windows. Isso remove todo o texto da janela do prompt de comando, proporcionando uma tela limpa.
+type: O comando é usado para exibir o conteúdo de arquivos de texto diretamente no prompt de comando. Por exemplo, você pode usar "type arquivo.txt" para exibir o conteúdo do arquivo de texto chamado "arquivo.txt".
+cipher: O comando pode exibir ou alterar o estado de criptografia de arquivos e pastas em volumes NTFS (Sistema de Arquivos do Novo Tecnologia) no Windows. Ele pode ser usado para criptografar ou descriptografar arquivos e pastas.
+pathping: O comando "pathping" é uma ferramenta de diagnóstico de rede no Windows que combina as funcionalidades do "ping" e do "tracert" (traceroute). Ele mostra informações sobre a rota que os pacotes de dados seguem ao viajar para um destino específico na rede.
+driverquery: Este comando é usado para exibir uma lista de drivers instalados no sistema. Ele fornece informações sobre os drivers do dispositivo, incluindo seus nomes, tipos, caminhos de arquivo e outros detalhes relacionados. Este comando é útil para diagnosticar problemas de drivers no sistema.
+help: O comando "help" exibe informações de ajuda sobre comandos específicos do CMD. Você pode usar o comando "help" seguido pelo nome do comando que deseja obter informações detalhadas. Por exemplo, "help cd" fornecerá uma descrição e exemplos de uso do comando "cd".
+exit: Por fim, o comando "exit" é usado para fechar o Terminal do Windows. Quando executado, o CMD será encerrado e você voltará à interface do Windows após encerrar sua sessão de comandos.
+
+
+$ git config --global user.name Wiclif06
+
+$ git config --global user.email felipewicliflealdasilva@gmail.com
+
+$ git config user.name
+
+$ git config user.email
+
+
+git remote add origin https://github.com/Wiclif06/aula-02-1tdspy.git
+git branch -M main
+git push -u origin main
